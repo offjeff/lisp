@@ -1,0 +1,1 @@
+sbcl --script euler/001.lisp

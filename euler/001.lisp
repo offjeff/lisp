@@ -1,5 +1,5 @@
 (defun func(a b n) 
-	(if (= n 1) 
+	(if (= n 0) 
 		0 
 		(+ 
 			(calc a b n) 
@@ -8,14 +8,10 @@
 	)
 )
 (defun calc(a b n)
-	(if (= (mod n a) 0)
-		(if (= (mod n b) 0)
-			n
-			0
-		)
-		0
-	)
+	(if (= (mod n a) 0) n 0)
+	(if (= (mod n b) 0) n 0)
 )
 
-(write (func 3 5 1000))
-;(write (func 3 5 20))
+;(write (func 3 5 1000))
+;(write (func 3 5 10))
+(write (calc 3 5 9))

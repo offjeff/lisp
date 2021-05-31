@@ -1,17 +1,4 @@
-(defun func(a b n) 
-	(if (= n 0) 
-		0 
-		(+ 
-			(calc a b n) 
-			(func a b (- n 1))
-		)
-	)
-)
-(defun calc(a b n)
-	(if (= (mod n a) 0) n 0)
-	(if (= (mod n b) 0) n 0)
-)
+(defun f(a b n) (if (= n 0) 0 (+ (f a b (- n 1)) (* n (take? a b n)))))
+(defun take?(a b n) (if (or (= 0 (mod n a)) (= (mod n b) 0)) 1 0))
+(write (f 3 5 999))
 
-;(write (func 3 5 1000))
-;(write (func 3 5 10))
-(write (calc 3 5 9))
